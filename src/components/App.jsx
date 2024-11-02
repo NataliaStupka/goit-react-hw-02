@@ -53,7 +53,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log(state);
     //складні типами(об'єкт, масив) перетворюємо збережене значення у рядок за допомогою JSON.stringify
     window.localStorage.setItem('key-state', JSON.stringify(state));
   }, [state]);
