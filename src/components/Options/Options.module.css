@@ -13,6 +13,10 @@
 
   cursor: pointer;
   transition: border-color 0.25s;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }
 .button:hover {
   border-color: #646cff;

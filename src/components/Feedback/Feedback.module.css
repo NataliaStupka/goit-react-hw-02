@@ -4,4 +4,8 @@
 
 .feedbackItem {
   margin-bottom: 8px;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 }

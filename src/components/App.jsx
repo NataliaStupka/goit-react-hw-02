@@ -7,9 +7,9 @@ import { useState, useEffect } from 'react';
 
 function App() {
   const firstState = {
-    Good: 0,
-    Neutral: 0,
-    Bad: 0,
+    good: 0,
+    neutral: 0,
+    bad: 0,
   };
   const [state, setState] = useState(() => {
     const savedState = window.localStorage.getItem('key-state');
@@ -30,14 +30,14 @@ function App() {
 
   //-- % positive feedback; ().toFixed(0) - округлює до цілого числа
   const positiveFeedback = () => {
-    const persentPositivFeedback = ((state.Good / totalFeedback) * 100).toFixed(
+    const persentPositivFeedback = ((state.good / totalFeedback) * 100).toFixed(
       0
     );
 
     return persentPositivFeedback;
   };
 
-  //-- рахує відгуки по типу(Good, Bad, ...)
+  //-- рахує відгуки по типу(good, bad, ...)
   const updateFeedback = feedbackType => {
     //розпиляє попередній об'єкт(prev), і замінює "прийшовшому" типу([feedbackType] - ключ) значення(prev[feedbackType] + 1 )
     setState(prev => ({ ...prev, [feedbackType]: prev[feedbackType] + 1 }));
@@ -48,7 +48,7 @@ function App() {
     console.log('Reset Feedback');
 
     setState(prev => ({ ...prev, ...firstState })); //1 варіан
-    //setState(prev => ({ ...prev, Good: 0, Neutral: 0, Bad: 0 })); //2 варіант
+    //setState(prev => ({ ...prev, good: 0, neutral: 0, bad: 0 })); //2 варіант
     //setState(prev => Object.keys(prev).map(item => (prev[item] = 0))); //3 варіант ???? як добратися до значення???
   };
 
