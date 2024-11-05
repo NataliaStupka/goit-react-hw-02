@@ -47,9 +47,7 @@ function App() {
   const onClickReset = () => {
     console.log('Reset Feedback');
 
-    setState(prev => ({ ...prev, ...firstState })); //1 варіан
-    //setState(prev => ({ ...prev, good: 0, neutral: 0, bad: 0 })); //2 варіант
-    //setState(prev => Object.keys(prev).map(item => (prev[item] = 0))); //3 варіант ???? як добратися до значення???
+    setState(firstState);
   };
 
   useEffect(() => {
